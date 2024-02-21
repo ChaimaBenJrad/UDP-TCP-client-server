@@ -9,20 +9,20 @@ public class client_TCP {
         final int PORT = 12345;
 
         try {
-            // Création d'un socket pour se connecter au serveur
+            //2 CrÃ©ation d'un socket pour se connecter au serveur
             Socket socket = new Socket(SERVEUR_IP, PORT);
-            System.out.println("Connecté au serveur sur le port " + PORT);
+            System.out.println("ConnectÃ© au serveur sur le port " + PORT);
 
-            // Flux de lecture et d'écriture pour communiquer avec le serveur
+            //3 Flux de lecture et d'Ã©criture pour communiquer avec le serveur
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader clavier = new BufferedReader(new InputStreamReader(System.in));
 
-            // Lecture des messages du clavier et envoi au serveur
+            //4 Lecture des messages du clavier et envoi au serveur
             String messageUtilisateur;
             while ((messageUtilisateur = clavier.readLine()) != null) {
                 out.println(messageUtilisateur);
-                System.out.println("Réponse du serveur : " + in.readLine());
+                System.out.println("RÃ©ponse du serveur : " + in.readLine());
             }
 
             // Fermeture des flux et du socket
