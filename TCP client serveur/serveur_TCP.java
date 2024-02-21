@@ -12,7 +12,7 @@ public class serveur_TCP {
             ServerSocket serverSocket = new ServerSocket(PORT);
             System.out.println("Serveur en attente de connexion sur le port " + PORT + "...");
 
-            // Attente de la connexion d'un client
+            //2 Attente de la connexion d'un client
             Socket clientSocket = serverSocket.accept();
             System.out.println("Client connecté : " + clientSocket.getInetAddress().getHostAddress());
 
