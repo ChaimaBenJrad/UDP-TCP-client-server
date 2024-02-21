@@ -16,7 +16,7 @@ public class serveur_TCP {
             Socket clientSocket = serverSocket.accept();
             System.out.println("Client connecté : " + clientSocket.getInetAddress().getHostAddress());
 
-            // Flux de lecture et d'écriture pour communiquer avec le client
+            //5 Flux de lecture et d'écriture pour communiquer avec le client
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 
