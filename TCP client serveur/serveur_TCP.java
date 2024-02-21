@@ -8,23 +8,23 @@ public class serveur_TCP {
         final int PORT = 12345;
 
         try {
-            // Création d'un ServerSocket qui écoutera les connexions sur le port spécifié
+            //1 CrÃ©ation d'un ServerSocket qui Ã©coutera les connexions sur le port spÃ©cifiÃ©
             ServerSocket serverSocket = new ServerSocket(PORT);
             System.out.println("Serveur en attente de connexion sur le port " + PORT + "...");
 
             // Attente de la connexion d'un client
             Socket clientSocket = serverSocket.accept();
-            System.out.println("Client connecté : " + clientSocket.getInetAddress().getHostAddress());
+            System.out.println("Client connectÃ© : " + clientSocket.getInetAddress().getHostAddress());
 
-            // Flux de lecture et d'écriture pour communiquer avec le client
+            // Flux de lecture et d'Ã©criture pour communiquer avec le client
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 
-            // Lecture des messages du client et envoi d'une réponse
+            // Lecture des messages du client et envoi d'une rÃ©ponse
             String messageClient;
             while ((messageClient = in.readLine()) != null) {
-                System.out.println("Message reçu du client : " + messageClient);
-                out.println("Message reçu par le serveur : " + messageClient);
+                System.out.println("Message reÃ§u du client : " + messageClient);
+                out.println("Message reÃ§u par le serveur : " + messageClient);
             }
 
             // Fermeture des flux et des sockets
