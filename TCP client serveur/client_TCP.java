@@ -13,7 +13,7 @@ public class client_TCP {
             Socket socket = new Socket(SERVEUR_IP, PORT);
             System.out.println("Connecté au serveur sur le port " + PORT);
 
-            //3 Flux de lecture et d'écriture pour communiquer avec le serveur
+            //4 Flux de lecture et d'écriture pour communiquer avec le serveur
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader clavier = new BufferedReader(new InputStreamReader(System.in));
